@@ -6,6 +6,12 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+
+  base: process.env.CF_PAGES ? '/' : '/',
+  build: {
+    outDir: 'dist'
+  },
+
   plugins: [
     vue(),
     vueDevTools(),
