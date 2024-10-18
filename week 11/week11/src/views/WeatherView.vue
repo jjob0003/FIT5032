@@ -32,7 +32,7 @@
 
 <script>
 import axios from "axios";
-// const apikey = "139a84697b32508a247c2f5f4036cb36";
+const apikey = "139a84697b32508a247c2f5f4036cb36";
   
 export default {
     name: "App",
@@ -63,7 +63,6 @@ export default {
       async fetchCurrentLocationWeather() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(async (position) => {
-            const apikey = import.meta.env.weather_api_key;
             const { latitude, longitude } = position.coords;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
             await this.fetchWeatherData(url);
